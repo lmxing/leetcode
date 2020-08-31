@@ -5,7 +5,30 @@
 class Solution
 {
 public: 
+
     int lengthOfLongestSubstring(string s) {
+        int len = s.size();
+        unordered_map<int, int> map;
+        int left = 0;
+        int right = 0;
+        int max_len = 0;
+        while(right < len) {
+            int tmp = s[right] - '0';
+			print(map);
+            if (map.count(tmp) <= 0) {
+                map[tmp] = 1;
+                max_len = max(max_len, right - left + 1);
+                right++;
+            } else {
+                map.clear();
+                left++;
+                right= left;
+            }
+        }
+        return max_len;
+    };
+
+    int lengthOfLongestSubstring1(string s) {
         int n = s.size();
         if (n <= 1) return n;
         // 记录字符上一次出现的位置
@@ -31,7 +54,7 @@ public:
 int main()
 {
 	Solution sol;
-	string str = "abcabcbb";
+	string str = "aaabbb";
 	int rest = sol.lengthOfLongestSubstring(str);
 	std::cout << rest << std::endl;
 	return 1;

@@ -100,7 +100,7 @@ R-package/src/Makevars
 .idea
 *.iml
 /cmake-build-debug/
-*a.out
+**/a.out
 /sort-list/a.out
 # GDB
 .gdb_history
