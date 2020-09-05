@@ -1,6 +1,8 @@
 #pragma once
 #include "my_list_node.h"
 
+using namespace std;
+
 template<typename T>
 void print(set<T> & vec) {
 	for (auto i:vec)
